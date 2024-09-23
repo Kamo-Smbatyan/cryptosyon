@@ -47,7 +47,7 @@ const LimitOrder = () => {
       }
     };
     fetchTokens();
-  }, []);
+  }, [API_BASE_URL, fromToken, toToken]);
   useEffect(() => {
     const fetchOrders = async () => {
       if (wallet.connected && wallet.publicKey) {
@@ -351,7 +351,7 @@ const LimitOrder = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  
+                  {renderOpenOrdersTable(openOrders)}
                 </tbody>
               </table>
             </div>
